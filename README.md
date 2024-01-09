@@ -25,18 +25,22 @@
 ## Description
 
 [Nest](https://github.com/Jesus123780/nest-test) 
-- El proyecto comienza convirtiendo un JSON predefinido en una clase específica. Esta clase representa una estructura de datos Y lógica para manejar la información del JSON 
 
-- Crea un controlador con un endpoint específico (POST /email/process) que recibe el JSON original.
-Implementa la lógica en este endpoint para procesar el JSON recibido utilizando las herramientas de mapeo, mapeando los datos a la estructura de la clase definida previamente.
+- Cree un controlador con un punto final que reciba la URL o la ruta de un archivo de correo electrónico como parámetro.
+
+- La respuesta debe ser el JSON adjunto en el correo electrónico en cualquiera de los siguientes casos: como archivo adjunto, dentro del cuerpo del correo electrónico como enlace, o dentro del cuerpo del correo electrónico como enlace que lleva a una página web donde hay un enlace que conduce al JSON real.
 
 # Uso del Endpoint `/email/process`
 
-Este endpoint procesa un JSON con datos de eventos de correo electrónico y devuelve la estructura `EmailData` como respuesta.
+Este endpoint procesa un JSON con datos segun el paramtro `{
+  "path": "RazonesPorLaCualSoyUnBuenCandidatoParaBackendDeveloperNEST.eml"
+}` que es la ruta del archivo del correo.
 
-## URL del Endpoint
 
-[JSON](https://github.com/aws/aws-lambda-go/blob/main/events/testdata/ses-sns-event.json)
+## URL del Endpoint POST 
+
+[email/process](http://localhost:3000/email/process)
+
 POST /email/process
 
 
